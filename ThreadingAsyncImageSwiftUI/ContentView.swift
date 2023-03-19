@@ -9,13 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            
+            VStack {
+                // using async
+                AsyncImage(url: URL(string:  "https://images.pexels.com/photos/3774243/pexels-photo-3774243.jpeg?cs=srgb&dl=pexels-james-wheeler-3774243.jpg&fm=jpg")!) { image in
+                    image.resizable().frame(width: 300, height: 300, alignment: .center)
+                } placeholder: {
+                    ProgressView()
+                }
+
+                
+            
+                List(superHeroArray) {superhero in
+                    Text(superhero.name)
+                        .font(.title3)
+                        .foregroundColor(.blue)
+                    
+                }
+            }.navigationTitle(Text("Superhero Book"))
         }
-        .padding()
     }
 }
 
