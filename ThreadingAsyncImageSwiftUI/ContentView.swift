@@ -13,9 +13,10 @@ struct ContentView: View {
             
             VStack {
                 // using async
-                AsyncImage(url: URL(string:  "https://images.pexels.com/photos/3774243/pexels-photo-3774243.jpeg?cs=srgb&dl=pexels-james-wheeler-3774243.jpg&fm=jpg")!) { image in
+                AsyncImage(url: URL(string:   "https://images.pexels.com/photos/3774243/pexels-photo-3774243.jpeg?cs=srgb&dl=pexels-james-wheeler-3774243.jpg&fm=jpg")!) { image in
                     image.resizable().frame(width: 300, height: 300, alignment: .center)
                 } placeholder: {
+                    
                     ProgressView()
                 }
 
